@@ -1,0 +1,35 @@
+{
+ "collection_info": {
+  "namespace": "containers",
+  "name": "podman",
+  "version": "1.4.4",
+  "authors": [
+   "Sagi Shnaidman <sshnaidm@redhat.com>",
+   "Ansible team"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "containers",
+   "podman",
+   "libpod"
+  ],
+  "description": "Podman container Ansible modules",
+  "license": [
+   "GPL-3.0-or-later"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "https://github.com/containers/ansible-podman-collections.git",
+  "documentation": "https://github.com/containers/ansible-podman-collections",
+  "homepage": "https://github.com/containers/ansible-podman-collections",
+  "issues": "https://github.com/containers/ansible-podman-collections/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "9b6f7cd6dcd80c01da045060e1d3a3a7cab220aab3e93dd7997f58511200e119",
+  "format": 1
+ },
+ "format": 1
+}

@@ -1,0 +1,13 @@
+---
+# This playbook runs a basic DF command.
+
+- hosts: ru8server
+  #remote_user: root
+
+  tasks: 
+  - name: find disk space available.
+    command: df -hT
+
+
+        
+    
