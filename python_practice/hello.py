@@ -1,5 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
-#this prints hello world
+#This is a full line comment
 
-print('hello world')
+print("Hello, World!") #this is a trailing comment
+
+"""
+This  is not a  block  comment.
+This is a multiline string.
+"""
