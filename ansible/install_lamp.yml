@@ -1,0 +1,44 @@
+#This playbook installs LAMP
+- name: Set up server
+  hosts: linuxplayground
+  tasks: 
+    - name: install epel repository
+      ansible.builtin.yum_repository:
+        name: epel repository
+        description: configure epel repo
+        baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+        state: present
+
+    - name: install remi repository
+      ansible.builtin.yum_repository: 
+        name: remi repository
+        description: configure remi repo 
+        baseurl: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+        state: present
+
+    - name: Install Apache
+      dnf: 
+        name: httpd
+        state: present
+
+    - name: Run Apache
+      service: 
+        name: httpd
+        state: started
+
+    - name: Install Mysql
+      dnf:
+        name: mariadb-server
+        state: present 
+
+    - name: Run Mysql
+      service:
+        name: mariadb
+        state: started
+
+    - name: Install PHP
+      dnf:
+        name: php
+        name: php-cli
+        name: php-common
+
