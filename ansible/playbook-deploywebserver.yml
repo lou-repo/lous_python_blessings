@@ -1,0 +1,78 @@
+This play book deploys a web server and database server
+- name: Configure Webserver
+  hosts: webserver
+  tasks:
+    - name: install epel repository
+      ansible.builtin.yum_repository:
+        name: epel repository
+        description: configure epel repo
+        baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        state: present
+
+    - name: install remi repository
+      ansible.builtin.yum_repository:
+        name: remi repository
+        description: configure remi repo
+        baseurl: https://dl.fedoraproject.org/enterprise/remi-release-7.rpm
+        state: present
+
+    - name: install apache
+      yum:
+        name: httpd
+        state: present
+
+    - name: run apache 
+      service:
+        name: httpd
+        state: started
+
+    - name: install PHP
+      yum:
+        name: php
+        name: php-cli
+        name: php-common
+
+- name: Configure Database server
+  hosts: dbserver
+  tasks: 
+    - name: install maria db
+      yum:
+        name: mariadb-server
+        state: present 
+
+    - name: run mariadb 
+      service:
+        name: mariadb
+        state: started
+
+
+- name: configure firewalld 
+  hosts: webserver dbserver
+  tasks:
+    - name: install firewalld
+      yum:
+        name: firewalld
+        state: present
+
+    - name: enable and start firewalld
+      service: name=firewalld state=started enabled=yes
+
+    - name: firewalld rules
+      firewalld:
+        service: "{{ item }}"
+        permanent: yes
+        immediate: yes
+        state: enabled
+      with_items:
+        - ssh
+        - http 
+        - https
+        - mysql
+        - dns
+        - imap
+        - pop3
+    
+    - name: reload service firewalld
+      systemd:
+        name: firewalld
+        state: reloaded
