@@ -1,0 +1,6 @@
+-
+  name: Test Connectivity to Target Servers
+  hosts: practice 
+  tasks: 
+    - name: Ping Test
+      ping:
