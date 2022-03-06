@@ -17,9 +17,9 @@ window.title("")
 URLAPI = "https://alpha-vantage.p.rapidapi.com/query"
 
 CRYPTO = "BTC"
-fiat = "USD"
+FIAT = "USD"
 
-querystring = {"to_currency":fiat,"function":"CURRENCY_EXCHANGE_RATE","from_currency":CRYPTO}
+querystring = {"to_currency":FIAT,"function":"CURRENCY_EXCHANGE_RATE","from_currency":CRYPTO}
 
 headers = {
     'x-rapidapi-key': "<insert_api_key_here>",
