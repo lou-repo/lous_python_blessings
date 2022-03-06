@@ -24,7 +24,7 @@ minutes = int( ( total_seconds % HOUR ) / MINUTE )
 seconds = int( total_seconds % MINUTE )
 
 # Build up the pretty string (like this: "N days, N hours, N minutes, N seconds")
-    string = ""
+string = ""
     if days > 0:
         string += str(days) + " " + (days == 1 and "day" or "days" ) + ", "
     if len(string) > 0 or hours > 0:
@@ -34,7 +34,7 @@ seconds = int( total_seconds % MINUTE )
         string += str(seconds) + " " + (seconds == 1 and "second" or "seconds" )
         return string;
 
-print("The system uptime is: " + uptime())
+print("The system uptime is: " + uptime)
 
 #shows users logged in
 
