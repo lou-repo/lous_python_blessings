@@ -1,20 +1,23 @@
 #!/usr/bin/python3
 
 #boolean value
-val1 = True
-print(val1)
+from lib2to3.pgen2.token import NUMBER
+
+
+VAL1 = True
+print(VAL1)
 
 #num to boolean
-number = 10
-print(bool(number))
+NUMBER = 10
+print(bool(NUMBER))
 
-number = -5
-print(bool(number))
+NUMBER = -5
+print(bool(NUMBER))
 
-number = 0
-print(bool(number))
+NUMBER = 0
+print(bool(NUMBER))
 
 #boolean from comparison operator
-val1 = 6
-val2 = 3
-print(val1 < val2)
+VAL1 = 6
+VAL2 = 3
+print(VAL1 < VAL22)

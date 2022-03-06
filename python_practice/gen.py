@@ -7,7 +7,7 @@ def gen_range(stop, start=1, step=1):
         num += step
 
 def gen_fib():
-    a, b = 0, 1
+    A, B = 0, 1
     while True:
-        a, b = b, a + b
-        yield a
+        A, B = B, A + B
+        yield A
