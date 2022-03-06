@@ -14,7 +14,8 @@ assert emails == {
     "ashley": "ashley@example.com",
     "craig": "craig@example.com",
     "elizabeth": "elizabeth@example.com",
-}, f"Expected `emails` to be {{'ashley': 'ashley@example.com', 'craig': 'craig@example.com', 'elizabeth': 'elizabeth@example.com'}} but got: {repr(emails)}"
+}, f"Expected `emails` to be {{'ashley': 'ashley@example.com', 'craig': 'craig@example.com',
+                               'elizabeth': 'elizabeth@example.com'}} but got: {repr(emails)}"
 
 # 3) Remove 'craig' from the emails dictionary without reassigning the variable.
 del emails['craig']
@@ -22,7 +23,8 @@ del emails['craig']
 assert emails == {
     "ashley": "ashley@example.com",
     "elizabeth": "elizabeth@example.com",
-}, f"Expected `emails` to be {{'ashley': 'ashley@example.com', 'elizabeth': 'elizabeth@example.com'}} but got: {repr(emails)}"
+}, f"Expected `emails` to be {{'ashley': 'ashley@example.com', 'elizabeth':
+                               'elizabeth@example.com'}} but got: {repr(emails)}"
 
 # 4) Add 'dalton' to the emails dictionary without reassigning the variable.
 emails['dalton'] = 'dalton@example.com'
@@ -31,7 +33,8 @@ assert emails == {
     "ashley": "ashley@example.com",
     "elizabeth": "elizabeth@example.com",
     "dalton": "dalton@example.com",
-}, f"Expected `emails` to be {{'ashley': 'ashley@example.com', 'elizabeth': 'elizabeth@example.com', 'dalton': 'dalton@example.com'}} but got: {repr(emails)}"
+}, f"Expected `emails` to be {{'ashley': 'ashley@example.com', 'elizabeth':
+                               'elizabeth@example.com', 'dalton': 'dalton@example.com'}} but got: {repr(emails)}"
 
 # 5) Return a list of keys from the emails dictionary as `users`
 users= list(emails.keys())
@@ -58,4 +61,5 @@ assert pairs == [
     ("ashley", "ashley@example.com"),
     ("elizabeth", "elizabeth@example.com"),
     ("dalton", "dalton@example.com"),
-], f"Expected `pairs` to be [('ashley', 'ashley@example.com'), ('elizabeth', 'elizabeth@example.com'), ('dalton', 'dalton@example.com')] but got: {repr(pairs)}"
+], f"Expected `pairs` to be [('ashley', 'ashley@example.com'), ('elizabeth', 'elizabeth@example.com'),
+                             ('dalton', 'dalton@example.com')] but got: {repr(pairs)}"
