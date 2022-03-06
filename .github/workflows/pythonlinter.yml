@@ -1,8 +1,4 @@
 name: Python Linter
-on: [push]
-jobs:
-  analyze python:
-    runs-on: ubuntu-latest
  steps:
  - uses: actions/checkout@v2  
  - name: Python Linter
