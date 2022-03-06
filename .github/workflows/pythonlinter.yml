@@ -1,4 +1,3 @@
-name: Python Linter
  steps:
  - uses: actions/checkout@v2  
  - name: Python Linter
