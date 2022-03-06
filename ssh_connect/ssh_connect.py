@@ -13,8 +13,8 @@ COMMAND = "ls -l"
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(host, port, username)
-stdin, stdout, stderr = ssh.exec_command(command)
+ssh.connect(HOST, PORT, USERNAME)
+stdin, stdout, stderr = ssh.exec_command(COMMAND)
 lines = stdout.readlines()
 
 def line_reader(lines):
