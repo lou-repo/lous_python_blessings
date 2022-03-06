@@ -13,15 +13,15 @@ def uptime():
         except:
             return "Cannot open uptime file: /proc/uptime"
         total_seconds = float(contents[0])
-    # Helper vars:
-    MINUTE  = 60
-    HOUR    = MINUTE * 60
-    DAY     = HOUR * 24
-    # Get the days, hours, etc:
-    days    = int( total_seconds / DAY )
-    hours   = int( ( total_seconds % DAY ) / HOUR )
-    minutes = int( ( total_seconds % HOUR ) / MINUTE )
-    seconds = int( total_seconds % MINUTE )
+# Helper vars:
+        MINUTE  = 60
+        HOUR    = MINUTE * 60
+        DAY     = HOUR * 24
+# Get the days, hours, etc:
+        days    = int( total_seconds / DAY )
+        hours   = int( ( total_seconds % DAY ) / HOUR )
+        minutes = int( ( total_seconds % HOUR ) / MINUTE )
+        seconds = int( total_seconds % MINUTE )
 
 # Build up the pretty string (like this: "N days, N hours, N minutes, N seconds")
     string = ""
@@ -34,7 +34,7 @@ def uptime():
             string += str(seconds) + " " + (seconds == 1 and "second" or "seconds" )
             return string;
 
-        print ("The system uptime is: " + uptime())
+            print ("The system uptime is: " + uptime())
 
 #shows users logged in
 
