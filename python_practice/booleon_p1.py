@@ -20,4 +20,4 @@ print(bool(NUMBER))
 #boolean from comparison operator
 VAL1 = 6
 VAL2 = 3
-print(VAL1 < VAL22)
+print(VAL1 < VAL2)
