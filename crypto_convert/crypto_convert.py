@@ -36,3 +36,4 @@ print('Last Refresh Rate: ' , last_refresh , time_zone)
 print('Current Bid: ' , float(bid) , fiat_code)
 print('Current Ask: ' , float(ask) , fiat_code)
 
+#test comment to trigger workflow
