@@ -25,16 +25,16 @@ seconds = int( total_seconds % MINUTE )
 
 # Build up the pretty string (like this: "N days, N hours, N minutes, N seconds")
 string = ""
-if days > 0:
-    string += str(days) + " " + (days == 1 and "day" or "days" ) + ", "
-if len(string) > 0 or hours > 0:
-    string += str(hours) + " " + (hours == 1 and "hour" or "hours" ) + ", "
-if len(string) > 0 or minutes > 0:
-    string += str(minutes) + " " + (minutes == 1 and "minute" or "minutes" ) + ", "
-    string += str(seconds) + " " + (seconds == 1 and "second" or "seconds" )
-return string;
+    if days > 0:
+        string += str(days) + " " + (days == 1 and "day" or "days" ) + ", "
+    if len(string) > 0 or hours > 0:
+        string += str(hours) + " " + (hours == 1 and "hour" or "hours" ) + ", "
+    if len(string) > 0 or minutes > 0:
+        string += str(minutes) + " " + (minutes == 1 and "minute" or "minutes" ) + ", "
+        string += str(seconds) + " " + (seconds == 1 and "second" or "seconds" )
+        return string;
 
-print("The system uptime is: " + uptime)
+    print("The system uptime is: " + uptime())
 
 #shows users logged in
 
