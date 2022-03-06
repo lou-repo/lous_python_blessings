@@ -3,8 +3,9 @@
 import tkinter
 from tkinter import *
 from tkinter import Label
-import requests
 import json
+import requests
+
 
 
 window = Tk()
@@ -13,31 +14,31 @@ window.configure(background='#242B2E')
 window.title("")
 
 
-url = "https://alpha-vantage.p.rapidapi.com/query"
+URLAPI = "https://alpha-vantage.p.rapidapi.com/query"
 
-crypto = "BTC"
+CRYPTO = "BTC"
 fiat = "USD"
 
-querystring = {"to_currency":fiat,"function":"CURRENCY_EXCHANGE_RATE","from_currency":crypto}
+querystring = {"to_currency":fiat,"function":"CURRENCY_EXCHANGE_RATE","from_currency":CRYPTO}
 
 headers = {
     'x-rapidapi-key': "<insert_api_key_here>",
     'x-rapidapi-host': "alpha-vantage.p.rapidapi.com"
     }
 
-response = requests.get(url, headers=headers, params=querystring)
+response = requests.get(URLAPI, headers=headers, params=querystring)
 data = response.json()
 result = data['Realtime Currency Exchange Rate']
 
 
-exchange_rate = result['5. Exchange Rate']
-crypto_current = (1/float(exchange_rate))
+EXCHANGE_RATE = result['5. Exchange Rate']
+CRYPTO_CURRENT = (1/float(EXCHANGE_RATE))
 
 
 def conversion():
-	btc=(float(dollars.get())*crypto_current)
-	bitcoin_conversion_result.delete("1.0")
-	bitcoin_conversion_result.insert(END, btc)
+    btc=(float(dollars.get())*CRYPTO_CURRENT)
+    bitcoin_conversion_result.delete("1.0")
+    bitcoin_conversion_result.insert(END, btc)
 
 
 title_of_app = StringVar()
