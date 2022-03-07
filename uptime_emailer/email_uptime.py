@@ -34,7 +34,7 @@ def uptime():
             string += str(seconds) + " " + (seconds == 1 and "second" or "seconds" )
             return string;
 
-        print ("The system uptime is: " + uptime())
+        print("The system uptime is: " + uptime())
 
 #shows users logged in
 
