@@ -24,7 +24,7 @@ def uptime():
         seconds = int( total_seconds % MINUTE )
 
 # Build up the pretty string (like this: "N days, N hours, N minutes, N seconds")
-    string = ""
+string = ""
         if days > 0:
             string += str(days) + " " + (days == 1 and "day" or "days" ) + ", "
         if len(string) > 0 or hours > 0:
