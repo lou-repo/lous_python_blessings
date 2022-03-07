@@ -12,7 +12,7 @@ def uptime():
             f.close()
         except:
             return "Cannot open uptime file: /proc/uptime"
-            total_seconds = float(contents[0])
+total_seconds = float(contents[0])
 # Helper vars:
 MINUTE  = 60
 HOUR    = MINUTE * 60
