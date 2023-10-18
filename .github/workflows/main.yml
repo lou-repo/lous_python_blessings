@@ -1,0 +1,28 @@
+name: Check for new code
+
+on: [push]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Check for new code
+      run: |
+        git diff --exit-code HEAD^ || (echo "New code has been added." && exit 0)
+        echo "No new code was added." && exit 1
+
+    - name: Create check run
+      uses: octokit/request-action@v2.x
+      with:
+        route: POST /repos/${{ github.repository }}/check-runs
+        mediaType: '{"previews": ["antiope"]}'
+        name: code-check
+        head_sha: ${{ github.event.pull_request.head.sha }}
+        conclusion: success
+        output: '{"title":"Check","summary":"New code has been added."}'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
